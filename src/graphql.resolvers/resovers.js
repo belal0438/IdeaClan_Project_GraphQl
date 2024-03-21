@@ -124,7 +124,7 @@ const resolvers = {
           throw new Error("Unauthorized user pleass logged in");
         }
 
-        const checkUser = User.findOne({ where: { id: userId } });
+        const checkUser = await User.findOne({ where: { id: userId } });
         if (checkUser.role !== "admin") {
           throw new Error("only Admin Can Eddit Book");
         }
